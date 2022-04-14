@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		C452AA0E2807271400907CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA0D2807271400907CEF /* AppDelegate.swift */; };
 		C452AA102807271400907CEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA0F2807271400907CEF /* SceneDelegate.swift */; };
-		C452AA122807271400907CEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA112807271400907CEF /* ViewController.swift */; };
 		C452AA152807271400907CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C452AA132807271400907CEF /* Main.storyboard */; };
 		C452AA172807271900907CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C452AA162807271900907CEF /* Assets.xcassets */; };
 		C452AA1A2807271900907CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C452AA182807271900907CEF /* LaunchScreen.storyboard */; };
+		C452AA2228072A0D00907CEF /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2128072A0D00907CEF /* UsersViewController.swift */; };
+		C452AA2428072F1800907CEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2328072F1800907CEF /* User.swift */; };
+		C452AA26280731BA00907CEF /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA25280731BA00907CEF /* UserManager.swift */; };
+		C452AA282807786500907CEF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA272807786500907CEF /* MapViewController.swift */; };
+		C452AA2A28077D3400907CEF /* UpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2928077D3400907CEF /* UpdateUserViewController.swift */; };
+		C452AA2C2807824000907CEF /* UpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2B2807824000907CEF /* UpdateResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C452AA0A2807271400907CEF /* MeetWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C452AA0D2807271400907CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C452AA0F2807271400907CEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C452AA112807271400907CEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C452AA142807271400907CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C452AA162807271900907CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C452AA192807271900907CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C452AA1B2807271900907CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C452AA2128072A0D00907CEF /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		C452AA2328072F1800907CEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C452AA25280731BA00907CEF /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C452AA272807786500907CEF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C452AA2928077D3400907CEF /* UpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewController.swift; sourceTree = "<group>"; };
+		C452AA2B2807824000907CEF /* UpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,36 @@
 		C452AA0C2807271400907CEF /* MeetWorld */ = {
 			isa = PBXGroup;
 			children = (
+				C452AA2E2807868F00907CEF /* Controller */,
+				C452AA2D2807867A00907CEF /* Model */,
 				C452AA0D2807271400907CEF /* AppDelegate.swift */,
 				C452AA0F2807271400907CEF /* SceneDelegate.swift */,
-				C452AA112807271400907CEF /* ViewController.swift */,
 				C452AA132807271400907CEF /* Main.storyboard */,
 				C452AA162807271900907CEF /* Assets.xcassets */,
 				C452AA182807271900907CEF /* LaunchScreen.storyboard */,
 				C452AA1B2807271900907CEF /* Info.plist */,
+				C452AA25280731BA00907CEF /* UserManager.swift */,
 			);
 			path = MeetWorld;
+			sourceTree = "<group>";
+		};
+		C452AA2D2807867A00907CEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C452AA2B2807824000907CEF /* UpdateResponse.swift */,
+				C452AA2328072F1800907CEF /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C452AA2E2807868F00907CEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C452AA2128072A0D00907CEF /* UsersViewController.swift */,
+				C452AA272807786500907CEF /* MapViewController.swift */,
+				C452AA2928077D3400907CEF /* UpdateUserViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C452AA122807271400907CEF /* ViewController.swift in Sources */,
+				C452AA2A28077D3400907CEF /* UpdateUserViewController.swift in Sources */,
+				C452AA2C2807824000907CEF /* UpdateResponse.swift in Sources */,
+				C452AA2428072F1800907CEF /* User.swift in Sources */,
+				C452AA282807786500907CEF /* MapViewController.swift in Sources */,
 				C452AA0E2807271400907CEF /* AppDelegate.swift in Sources */,
+				C452AA2228072A0D00907CEF /* UsersViewController.swift in Sources */,
+				C452AA26280731BA00907CEF /* UserManager.swift in Sources */,
 				C452AA102807271400907CEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
