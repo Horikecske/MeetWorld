@@ -6,44 +6,42 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UsersViewController: UITableViewController {
     
-    private var observation: NSKeyValueObservation?
+    // DisposeBag for disposing subscriptions
+    private let bag = DisposeBag()
+    var viewModel: UsersViewModeling!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeToObservable()
+        bindTableView()
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return UserManager.shared.users.count
+    
+    // binds the users stored in the ViewModel to the cell's content in the table view
+    private func bindTableView() {
+        self.tableView.delegate = nil
+        self.tableView.dataSource = nil
+        
+        viewModel.users.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: "UserStatusCell")) { index, user, cell in
+            cell.textLabel?.text = user.id
+            cell.detailTextLabel?.text = user.status
+        }
+        .disposed(by: bag)
+        
+        viewModel.downloadUsers()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UserManager.shared.downloadUsers()
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserStatusCell", for: indexPath)
-        let user = UserManager.shared.users[indexPath.row]
-        cell.textLabel?.text = user.id
-        cell.detailTextLabel?.text = user.status
-
-        return cell
+        viewModel.downloadUsers()
     }
     
     
     @IBAction func refreshButtonTap(_ sender: Any) {
-        UserManager.shared.downloadUsers()
+        viewModel.downloadUsers()
     }
-    
-    private func subscribeToObservable() {
-        observation = UserManager.shared.observe(\.users, changeHandler: { [weak self] _, _ in
-            self?.tableView.reloadData()
-        })
-    }
-    
 
 }

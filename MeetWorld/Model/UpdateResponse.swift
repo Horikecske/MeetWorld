@@ -7,6 +7,7 @@
 
 import Foundation
 
+// model of the response received after the post request
 struct UpdateResponse: Codable {
     let result: String
     let status: String

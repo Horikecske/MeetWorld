@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DDB853C87356170724506CD /* Pods_MeetWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415055F71E8B053CF4A2ED51 /* Pods_MeetWorld.framework */; };
 		C452AA0E2807271400907CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA0D2807271400907CEF /* AppDelegate.swift */; };
 		C452AA102807271400907CEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA0F2807271400907CEF /* SceneDelegate.swift */; };
 		C452AA152807271400907CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C452AA132807271400907CEF /* Main.storyboard */; };
@@ -14,13 +15,21 @@
 		C452AA1A2807271900907CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C452AA182807271900907CEF /* LaunchScreen.storyboard */; };
 		C452AA2228072A0D00907CEF /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2128072A0D00907CEF /* UsersViewController.swift */; };
 		C452AA2428072F1800907CEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2328072F1800907CEF /* User.swift */; };
-		C452AA26280731BA00907CEF /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA25280731BA00907CEF /* UserManager.swift */; };
+		C452AA26280731BA00907CEF /* ServerUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA25280731BA00907CEF /* ServerUserManager.swift */; };
 		C452AA282807786500907CEF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA272807786500907CEF /* MapViewController.swift */; };
 		C452AA2A28077D3400907CEF /* UpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2928077D3400907CEF /* UpdateUserViewController.swift */; };
 		C452AA2C2807824000907CEF /* UpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA2B2807824000907CEF /* UpdateResponse.swift */; };
+		C452AA3D2809891200907CEF /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C452AA3C2809891200907CEF /* UsersViewModel.swift */; };
+		C4736C7C280A0C12006F1A64 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4736C7B280A0C12006F1A64 /* MapViewModel.swift */; };
+		C4736C7E280A3593006F1A64 /* UpdateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4736C7D280A3593006F1A64 /* UpdateUserViewModel.swift */; };
+		C4736C81280AF19A006F1A64 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4736C80280AF19A006F1A64 /* UserManager.swift */; };
+		C4736C83280CD2BA006F1A64 /* MockUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4736C82280CD2BA006F1A64 /* MockUserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		415055F71E8B053CF4A2ED51 /* Pods_MeetWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65E38D5C16D4A10270734104 /* Pods-MeetWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetWorld.debug.xcconfig"; path = "Target Support Files/Pods-MeetWorld/Pods-MeetWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		8236F21DC21966BE69481025 /* Pods-MeetWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetWorld.release.xcconfig"; path = "Target Support Files/Pods-MeetWorld/Pods-MeetWorld.release.xcconfig"; sourceTree = "<group>"; };
 		C452AA0A2807271400907CEF /* MeetWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C452AA0D2807271400907CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C452AA0F2807271400907CEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,10 +39,15 @@
 		C452AA1B2807271900907CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C452AA2128072A0D00907CEF /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		C452AA2328072F1800907CEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C452AA25280731BA00907CEF /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C452AA25280731BA00907CEF /* ServerUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUserManager.swift; sourceTree = "<group>"; };
 		C452AA272807786500907CEF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C452AA2928077D3400907CEF /* UpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewController.swift; sourceTree = "<group>"; };
 		C452AA2B2807824000907CEF /* UpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateResponse.swift; sourceTree = "<group>"; };
+		C452AA3C2809891200907CEF /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		C4736C7B280A0C12006F1A64 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		C4736C7D280A3593006F1A64 /* UpdateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewModel.swift; sourceTree = "<group>"; };
+		C4736C80280AF19A006F1A64 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C4736C82280CD2BA006F1A64 /* MockUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDB853C87356170724506CD /* Pods_MeetWorld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66B7C33DE10668E70F0F8FFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				415055F71E8B053CF4A2ED51 /* Pods_MeetWorld.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C452AA012807271400907CEF = {
 			isa = PBXGroup;
 			children = (
 				C452AA0C2807271400907CEF /* MeetWorld */,
 				C452AA0B2807271400907CEF /* Products */,
+				D25D0B9086098E8CC3DAE9B9 /* Pods */,
+				66B7C33DE10668E70F0F8FFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +91,8 @@
 		C452AA0C2807271400907CEF /* MeetWorld */ = {
 			isa = PBXGroup;
 			children = (
+				C4736C7F280AD773006F1A64 /* Service */,
+				C452AA3B2809890300907CEF /* ViewModel */,
 				C452AA2E2807868F00907CEF /* Controller */,
 				C452AA2D2807867A00907CEF /* Model */,
 				C452AA0D2807271400907CEF /* AppDelegate.swift */,
@@ -74,7 +101,6 @@
 				C452AA162807271900907CEF /* Assets.xcassets */,
 				C452AA182807271900907CEF /* LaunchScreen.storyboard */,
 				C452AA1B2807271900907CEF /* Info.plist */,
-				C452AA25280731BA00907CEF /* UserManager.swift */,
 			);
 			path = MeetWorld;
 			sourceTree = "<group>";
@@ -98,6 +124,35 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		C452AA3B2809890300907CEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C452AA3C2809891200907CEF /* UsersViewModel.swift */,
+				C4736C7B280A0C12006F1A64 /* MapViewModel.swift */,
+				C4736C7D280A3593006F1A64 /* UpdateUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C4736C7F280AD773006F1A64 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C452AA25280731BA00907CEF /* ServerUserManager.swift */,
+				C4736C80280AF19A006F1A64 /* UserManager.swift */,
+				C4736C82280CD2BA006F1A64 /* MockUserManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D25D0B9086098E8CC3DAE9B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65E38D5C16D4A10270734104 /* Pods-MeetWorld.debug.xcconfig */,
+				8236F21DC21966BE69481025 /* Pods-MeetWorld.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C452AA1E2807271900907CEF /* Build configuration list for PBXNativeTarget "MeetWorld" */;
 			buildPhases = (
+				41826311D8A817BC7C6E9C91 /* [CP] Check Pods Manifest.lock */,
 				C452AA062807271400907CEF /* Sources */,
 				C452AA072807271400907CEF /* Frameworks */,
 				C452AA082807271400907CEF /* Resources */,
+				5EF6E8B85337D3635B6F3970 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,18 +221,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41826311D8A817BC7C6E9C91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeetWorld-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EF6E8B85337D3635B6F3970 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeetWorld/Pods-MeetWorld-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeetWorld/Pods-MeetWorld-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeetWorld/Pods-MeetWorld-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C452AA062807271400907CEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C452AA2A28077D3400907CEF /* UpdateUserViewController.swift in Sources */,
+				C4736C7C280A0C12006F1A64 /* MapViewModel.swift in Sources */,
 				C452AA2C2807824000907CEF /* UpdateResponse.swift in Sources */,
 				C452AA2428072F1800907CEF /* User.swift in Sources */,
 				C452AA282807786500907CEF /* MapViewController.swift in Sources */,
+				C4736C83280CD2BA006F1A64 /* MockUserManager.swift in Sources */,
 				C452AA0E2807271400907CEF /* AppDelegate.swift in Sources */,
+				C4736C81280AF19A006F1A64 /* UserManager.swift in Sources */,
 				C452AA2228072A0D00907CEF /* UsersViewController.swift in Sources */,
-				C452AA26280731BA00907CEF /* UserManager.swift in Sources */,
+				C452AA26280731BA00907CEF /* ServerUserManager.swift in Sources */,
+				C4736C7E280A3593006F1A64 /* UpdateUserViewModel.swift in Sources */,
+				C452AA3D2809891200907CEF /* UsersViewModel.swift in Sources */,
 				C452AA102807271400907CEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +424,7 @@
 		};
 		C452AA1F2807271900907CEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65E38D5C16D4A10270734104 /* Pods-MeetWorld.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -348,6 +453,7 @@
 		};
 		C452AA202807271900907CEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8236F21DC21966BE69481025 /* Pods-MeetWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

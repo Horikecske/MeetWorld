@@ -7,57 +7,55 @@
 
 import UIKit
 import MapKit
+import RxSwift
+import RxMKMapView
 
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    
-    private var observation: NSKeyValueObservation?
-    
+    // DisposeBag for disposing subscriptions
+    private let bag = DisposeBag()
+    var viewModel: MapViewModeling!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeToObservable()
+        bindMapView()
         
+        // adds long press recognizer, so the users can update their statuses with a long press
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
         mapView.addGestureRecognizer(longPressRecognizer)
     }
     
-    private func subscribeToObservable() {
-        observation = UserManager.shared.observe(\.users, changeHandler: { [weak self] _, _ in
-            if let strongSelf = self {
-                strongSelf.mapView.removeAnnotations(strongSelf.mapView.annotations)
-                strongSelf.mapView.addAnnotations(UserManager.shared.users)
-            }
-        })
+    // binds the users to the annotations on the map view
+    private func bindMapView() {
+        viewModel.users
+            .asDriver(onErrorJustReturn: [])
+            .drive(self.mapView.rx.annotations)
+            .disposed(by: bag)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        UserManager.shared.downloadUsers()
+        viewModel.downloadUsers()        
     }
-    
+        
+    // long press recognizer, which instantiates the UpdateUserNavigationController
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
             let storyboard = UIStoryboard(name: "Main", bundle: .main)
             let navigationController = storyboard.instantiateViewController(withIdentifier: "UpdateUserNavigationController") as! UINavigationController
             let updateUserVC = navigationController.viewControllers[0] as! UpdateUserViewController
+            // adding a dismiss action to the controller, so that dismissing the view
+            // causes the users to be downloaded again
+            updateUserVC.addDismissAction {
+                self.viewModel.downloadUsers()
+            }
             let touchPoint = recognizer.location(in: mapView)
             updateUserVC.coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
             
             present(navigationController, animated: true, completion: nil)
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,6 +8,7 @@
 import Foundation
 import MapKit
 
+// model of the user downloaded from and uploaded to the servers
 class User: NSObject, Codable {
     let id: String
     let status: String
@@ -24,6 +25,7 @@ class User: NSObject, Codable {
     }
 }
 
+// conforming to MKAnnotation, so that the user can easily be added to the map as an annotation
 extension User: MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D {

@@ -7,38 +7,28 @@
 
 import Foundation
 
-class UserManager: NSObject {
+// implementation of UserManager, used to fetch users from server, and post new status info as well
+class ServerUserManager: UserManager {
     
-    //MARK: Observable property
-    @objc dynamic private(set) var users: [User]
-    static let shared = UserManager()
-
-    private override init() {
-        users = [User]()
-        super.init()
-    }
-    
-    func downloadUsers() {
+    // downloads users from server
+    func downloadUsers(completion: @escaping ([User]) -> Void) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: OperationQueue.main)
         let url = URL(string: "https://meetworld.getsandbox.com/users")!
         let dataTask = session.dataTask(with: url) { data, _, _ in
             if let data = data, let receivedString = String(data: data, encoding: .utf8) {
-                print("Data received \(receivedString)")
-                self.processDownloadedData(data)
+                guard let users = try? JSONDecoder().decode([User].self, from: data) else {
+                    print("Error occoured while processing data")
+                    return
+                }
+                print(receivedString)
+                completion(users)
             }
         }
         dataTask.resume()
     }
     
-    private func processDownloadedData(_ data: Data) {
-        guard let users = try? JSONDecoder().decode([User].self, from: data) else {
-            print("Error occoured while processing data")
-            return
-        }
-        self.users = users
-    }
-    
+    // posts new user to server
     func update(user: User, completion: @escaping (UpdateResponse) -> Void) {
         let jsonData = try? JSONEncoder().encode(user)
         
